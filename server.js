@@ -3,6 +3,8 @@ const express = require("express");
 const hbs = require("hbs");
 const fs = require("fs");
 
+const port = process.env.PORT || 3000;
+
 // NOTE initializing express via a variable with the value of the return of executing express
 var app = express();
 var absoluteRoute = __dirname;
@@ -60,6 +62,6 @@ app.get("*", (req, res) => {
 
 // SECTION binding app to a port of the machine
 // NOTE parameters: port, callback(optional)
-app.listen(3000, () => {
+app.listen(port, () => {
         console.log(`listening to port: 3000`);
 });
